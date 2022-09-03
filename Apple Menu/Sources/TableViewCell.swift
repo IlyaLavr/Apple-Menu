@@ -8,7 +8,7 @@ import SnapKit
 import UIKit
 
 class TableViewCell: UITableViewCell {
-
+    
     static let idetifier = "TableViewCell"
     
     //MARK: - Elements
@@ -23,17 +23,17 @@ class TableViewCell: UITableViewCell {
     
     let nameUser: UILabel = {
         let label = UILabel()
-         label.font = UIFont.systemFont(ofSize: 26, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 26, weight: .regular)
         return label
     }()
     
     let systemInfo: UILabel = {
         let label = UILabel()
-         label.font = UIFont.systemFont(ofSize: 11, weight: .light)
+        label.font = UIFont.systemFont(ofSize: 11, weight: .light)
         return label
     }()
     
-     let photoSettings: UIImageView = {
+    let photoSettings: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
@@ -41,14 +41,14 @@ class TableViewCell: UITableViewCell {
         return imageView
     }()
     
-     var name: UILabel = {
+    var name: UILabel = {
         let label = UILabel()
-         label.textColor = .white
-         label.font = UIFont.systemFont(ofSize: 17, weight: .light)
+        label.textColor = .white
+        label.font = UIFont.systemFont(ofSize: 17, weight: .light)
         return label
     }()
     
-     let rightText: UILabel = {
+    let rightText: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 17, weight: .light)
         return label
@@ -63,7 +63,7 @@ class TableViewCell: UITableViewCell {
         return stack
     }()
     
-     lazy var searchBar: UISearchBar = {
+    lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.placeholder = "Поиск"
         return searchBar
@@ -80,7 +80,7 @@ class TableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("Error")
     }
-
+    
     // MARK: - Setup
     
     private func setupHierarhy() {
@@ -123,5 +123,5 @@ class TableViewCell: UITableViewCell {
             make.top.equalTo(contentView).offset(10)
             make.right.equalTo(snp.right).offset(-40)
         }
-}
+    }
 }

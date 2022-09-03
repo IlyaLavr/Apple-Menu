@@ -9,7 +9,7 @@ import SnapKit
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     // MARK: - Elements
     
     private let cellIdentifier = "cell"
@@ -23,7 +23,14 @@ class ViewController: UIViewController {
         return tableView
     }()
     
+    lazy var searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.placeholder = "Поиск"
+        return searchBar
+    }()
+    
     // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupHierarhy()
@@ -31,11 +38,11 @@ class ViewController: UIViewController {
     }
     
     //MARK: - Setup
-
+    
     private func setupHierarhy() {
         view.addSubview(tableView)
     }
-
+    
     private func setupLayout() {
         tableView.snp.makeConstraints { make in
             make.top.equalTo(view.snp.top)
@@ -49,7 +56,6 @@ class ViewController: UIViewController {
 // MARK: - Extensions
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
@@ -59,14 +65,16 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
+    //MARK: - Functions
+    
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-            let header = view as? UITableViewHeaderFooterView
-            header?.textLabel?.textColor = .white
-            header?.textLabel?.font = .systemFont(ofSize: 30)
+        let header = view as? UITableViewHeaderFooterView
+        header?.textLabel?.textColor = .white
+        header?.textLabel?.font = UIFont(name: "AlNile-Bold", size: 30)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-       return 4
+        return 4
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -81,14 +89,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.idetifier, for: indexPath) as! TableViewCell
-       
+        
         switch indexPath.section {
         case 0:
-            lazy var searchBar: UISearchBar = {
-               let searchBar = UISearchBar()
-               searchBar.placeholder = "Поиск"
-               return searchBar
-           }()
             cell.addSubview(searchBar)
             searchBar.snp.makeConstraints { make in
                 make.top.left.right.bottom.equalTo(cell)
@@ -132,8 +135,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
                 cell.rightText.text = "Не подключено"
                 cell.accessoryType = .disclosureIndicator
             default:
-            return cell
-                }
+                return cell
+            }
         case 3:
             switch indexPath.row {
             case 0:
@@ -155,27 +158,19 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             default:
                 return cell
             }
-            
         default:
             return cell
         }
         
         return cell
-        
-        
-}
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        switch section {
-    case 0: return 100
-        case 1: return .infinity
-    default: return 30
-        }
     }
     
-   
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 100
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-         if indexPath.section == 1 && indexPath.row == 0 {
+        if indexPath.section == 1 && indexPath.row == 0 {
             return 100
         } else {
             return 45
@@ -186,24 +181,10 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         switch indexPath.section {
         case 1:
             tableView.deselectRow(at: indexPath, animated: true)
-//            navigationController?.pushViewController(ThreeViewController(), animated: true)
+            navigationController?.pushViewController(DetailViewSecond(), animated: true)
         default:
             tableView.deselectRow(at: indexPath, animated: true)
-//            navigationController?.pushViewController(SecondViewController(), animated: true)
+            navigationController?.pushViewController(DetailView(), animated: true)
         }
-        
     }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    if(scrollView.panGestureRecognizer.translation(in: scrollView.superview).y > 0)
-    {
-
-        navigationItem.hidesSearchBarWhenScrolling = false
-        }
-    else
-    {
-     navigationItem.hidesSearchBarWhenScrolling = true
-    }
-
-}
 }

@@ -13,7 +13,7 @@ class DetailViewSecond: UIViewController {
     
     let image: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "apple")
+        image.image = UIImage(named: "good")
         return image
     }()
     
@@ -23,7 +23,6 @@ class DetailViewSecond: UIViewController {
         super.viewDidLoad()
         setupHierarhy()
         setupLayout()
-        view.backgroundColor = .magenta
     }
 
     //MARK: - Setup

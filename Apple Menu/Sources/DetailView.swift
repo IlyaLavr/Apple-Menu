@@ -7,7 +7,7 @@
 import SnapKit
 import UIKit
 
-class SecondViewController: UIViewController {
+class DetailView: UIViewController {
 
     // MARK: - Elements
     
@@ -23,7 +23,6 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
         setupHierarhy()
         setupLayout()
-        view.backgroundColor = .magenta
     }
 
     //MARK: - Setup
