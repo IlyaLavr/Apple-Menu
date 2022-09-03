@@ -58,6 +58,7 @@
 		09E1C99328C3E14D0011C55A /* Apple Menu */ = {
 			isa = PBXGroup;
 			children = (
+				09E1C9A228C3E1530011C55A /* Info.plist */,
 				09E1C9AE28C3E4E00011C55A /* Storyboards */,
 				09E1C9AD28C3E4D20011C55A /* App */,
 				09E1C9AC28C3E4BD0011C55A /* Sources */,
@@ -69,8 +70,8 @@
 		09E1C9AB28C3E4A60011C55A /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				09E1C9A228C3E1530011C55A /* Info.plist */,
 				09E1C99D28C3E1530011C55A /* Assets.xcassets */,
+				09E1C99F28C3E1530011C55A /* LaunchScreen.storyboard */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -96,7 +97,6 @@
 		09E1C9AE28C3E4E00011C55A /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				09E1C99F28C3E1530011C55A /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
