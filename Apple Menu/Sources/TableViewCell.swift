@@ -11,6 +11,8 @@ class TableViewCell: UITableViewCell {
 
     static let idetifier = "TableViewCell"
     
+    //MARK: - Elements
+    
     let photoUser: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFit

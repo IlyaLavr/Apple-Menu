@@ -46,6 +46,7 @@ class ViewController: UIViewController {
     }
 }
 
+// MARK: - Extensions
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     

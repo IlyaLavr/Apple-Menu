@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  DetailViewSecond.swift
 //  Apple Menu
 //
 //  Created by Илья on 03.09.2022.
@@ -7,7 +7,7 @@
 import SnapKit
 import UIKit
 
-class SecondViewController: UIViewController {
+class DetailViewSecond: UIViewController {
 
     // MARK: - Elements
     
@@ -17,7 +17,7 @@ class SecondViewController: UIViewController {
         return image
     }()
     
-    // MARK: - Lifecycle
+    // MARK: - Lyfecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

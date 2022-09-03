@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		090781C628C3EC6B007068F5 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090781C528C3EC6B007068F5 /* DetailView.swift */; };
+		090781C828C3ED13007068F5 /* DetailViewSecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090781C728C3ED13007068F5 /* DetailViewSecond.swift */; };
 		09E1C99528C3E14D0011C55A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1C99428C3E14D0011C55A /* AppDelegate.swift */; };
 		09E1C99728C3E14D0011C55A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1C99628C3E14D0011C55A /* SceneDelegate.swift */; };
 		09E1C99928C3E14D0011C55A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1C99828C3E14D0011C55A /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		090781C528C3EC6B007068F5 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		090781C728C3ED13007068F5 /* DetailViewSecond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewSecond.swift; sourceTree = "<group>"; };
 		09E1C99128C3E14D0011C55A /* Apple Menu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Apple Menu.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09E1C99428C3E14D0011C55A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09E1C99628C3E14D0011C55A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				09E1C99828C3E14D0011C55A /* ViewController.swift */,
 				09E1C9AF28C3E7C80011C55A /* TableViewCell.swift */,
 				090781C528C3EC6B007068F5 /* DetailView.swift */,
+				090781C728C3ED13007068F5 /* DetailViewSecond.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09E1C99928C3E14D0011C55A /* ViewController.swift in Sources */,
+				090781C828C3ED13007068F5 /* DetailViewSecond.swift in Sources */,
 				09E1C9B028C3E7C80011C55A /* TableViewCell.swift in Sources */,
 				09E1C99528C3E14D0011C55A /* AppDelegate.swift in Sources */,
 				090781C628C3EC6B007068F5 /* DetailView.swift in Sources */,
