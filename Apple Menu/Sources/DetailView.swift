@@ -8,7 +8,7 @@ import SnapKit
 import UIKit
 
 class DetailView: UIViewController {
-
+    
     // MARK: - Elements
     
     let image: UIImageView = {
@@ -24,7 +24,7 @@ class DetailView: UIViewController {
         setupHierarhy()
         setupLayout()
     }
-
+    
     //MARK: - Setup
     
     private func setupHierarhy() {
@@ -36,5 +36,4 @@ class DetailView: UIViewController {
             make.left.top.bottom.right.equalTo(view)
         }
     }
-
 }
