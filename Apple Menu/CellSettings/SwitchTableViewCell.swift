@@ -12,7 +12,7 @@ class SwitchTableViewCell: UITableViewCell {
     
     static let idetifier = "SwitchTableViewCell"
     
-    //MARK: - Elements
+    // MARK: - Elements
     
     let photoSettings: UIImageView = {
         let imageView = UIImageView()

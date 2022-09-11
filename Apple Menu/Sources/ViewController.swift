@@ -30,6 +30,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Настройки"
+        navigationController?.navigationBar.prefersLargeTitles = true
         setupHierarhy()
         setupLayout()
     }
@@ -50,25 +52,9 @@ class ViewController: UIViewController {
     }
 }
 
-// MARK: - Extensions
+    // MARK: - UITableViewDataSource
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-        case 0:
-            return "Настройки"
-        default:
-            return ""
-        }
-    }
-    
-    //MARK: - Functions
-    
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        let header = view as? UITableViewHeaderFooterView
-        header?.textLabel?.textColor = .white
-        header?.textLabel?.font = UIFont(name: "AlNile-Bold", size: 30)
-    }
+extension ViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         models.count
@@ -84,7 +70,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         switch model {
             
         case .labelCell(let model):
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as? TableViewCell else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.idetifier, for: indexPath) as? TableViewCell else {
                 return UITableViewCell()
             }
             cell.configure(with: model)
@@ -92,7 +78,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
             
         case .switchCell(let model):
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "SwitchTableViewCell", for: indexPath) as? SwitchTableViewCell else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SwitchTableViewCell.idetifier, for: indexPath) as? SwitchTableViewCell else {
                 return UITableViewCell()
             }
             cell.configure(with: model)
@@ -100,17 +86,26 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
-    }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 45
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        navigationController?.pushViewController(DetailView(), animated: true)
-    }
 }
 
+    // MARK: - UITableViewDelegate
+
+extension ViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            tableView.deselectRow(at: indexPath, animated: true)
+            navigationController?.pushViewController(DetailView(imageView: UIImageView(image: UIImage(named: "apple"))), animated: true)
+        case 1:
+            tableView.deselectRow(at: indexPath, animated: true)
+            navigationController?.pushViewController(DetailView(imageView: UIImageView(image: UIImage(named: "bin"))), animated: true)
+        default:
+            tableView.deselectRow(at: indexPath, animated: true)
+            navigationController?.pushViewController(DetailView(imageView: UIImageView(image: UIImage(named: "nature"))), animated: true)
+        }
+    }
+}

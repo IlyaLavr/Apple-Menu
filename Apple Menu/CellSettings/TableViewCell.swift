@@ -12,7 +12,7 @@ class TableViewCell: UITableViewCell {
     
     static let idetifier = "TableViewCell"
     
-    //MARK: - Elements
+    // MARK: - Elements
     
     let photoSettings: UIImageView = {
         let imageView = UIImageView()
